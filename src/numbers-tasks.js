@@ -201,9 +201,7 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 2; i < n; i++) {
-    // eslint-disable-next-line no-undef
+  for (let i = 2; i < n; i += 1) {
     if (n % i === 0) {
       return false;
     }
@@ -261,15 +259,13 @@ function getCube(num) {
 function getFibonacciNumber(index) {
   let x = 1;
   let y = 1;
-  // eslint-disable-next-line no-plusplus
   if (index === 0) {
     return 0;
   }
   if (index === 1) {
     return 1;
   }
-  // eslint-disable-next-line no-plusplus
-  for (let i = 3; i <= index; i++) {
+  for (let i = 3; i <= index; i += 1) {
     const z = x + y;
     x = y;
     y = z;
@@ -290,9 +286,7 @@ function getFibonacciNumber(index) {
  */
 function getSumToN(n) {
   let result = 0;
-  // eslint-disable-next-line no-plusplus
-  for (let i = 1; i <= n; i++) {
-    // eslint-disable-next-line no-const-assign
+  for (let i = 1; i <= n; i += 1) {
     result += i;
   }
   return result;
@@ -311,9 +305,10 @@ function getSumToN(n) {
  */
 function getSumOfDigits(num) {
   let sum = 0;
-  // eslint-disable-next-line no-restricted-syntax
-  for (const n of String(num)) {
-    sum += +n;
+  const arr = String(num).split('');
+
+  for (let i = 0; i < arr.length; i += 1) {
+    sum += +arr[i];
   }
   return sum;
 }
@@ -641,11 +636,9 @@ function getHypotenuse(a, b) {
  */
 function getCountOfOddNumbers(number) {
   let count = 0;
-  // eslint-disable-next-line no-unreachable-loop, no-plusplus
-  for (let i = 0; i <= Math.abs(number); i++) {
+  for (let i = 0; i <= Math.abs(number); i += 1) {
     if (i % 2 !== 0) {
-      // eslint-disable-next-line no-plusplus
-      count++;
+      count += 1;
     }
   }
   return count;
